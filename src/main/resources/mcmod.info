@@ -1,0 +1,8 @@
+[{
+  "modid": "vajrafx",
+  "name": "VajraFX",
+  "description": "Client-side mining animation for the GregTech Vajra.",
+  "version": "${modVersion}",
+  "mcversion": "${minecraftVersion}",
+  "authorList": ["Sixxo"]
+}]
