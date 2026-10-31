@@ -18,7 +18,7 @@ Only the Vajra is affected.
 
 ## Installation
 
-1. Download [`VajraFX-1.2.2.jar`](download/VajraFX-1.2.2.jar?raw=true) from the [`download`](download) folder.
+1. Download the latest `vajrafx-<version>.jar` from [Releases](https://github.com/Sixxoo/VajraFX/releases/latest).
 2. Put it into the `mods` folder of your GTNH instance (remove any older VajraFX versions).
 3. Start the game. `config/vajrafx.cfg` is created on the first launch.
 
