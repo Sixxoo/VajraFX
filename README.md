@@ -1,81 +1,58 @@
 # VajraFX
 
-Klientský mod pro **GregTech: New Horizons** (Minecraft 1.7.10), který Vajře přidává efekty těžení: energetický paprsek ze špičky při levém tlačítku a průhlednou pulse wave při pravém tlačítku.
+A client-side mod for **GregTech: New Horizons** (Minecraft 1.7.10) that adds mining effects to the Vajra: an energy beam from the tip on left click and a see-through pulse wave on right click.
 
-*English: client-side Minecraft 1.7.10 mod for GT: New Horizons. Adds a pixel-art energy beam from the Vajra's tip while mining (left click) and a see-through pulse wave on right click. Affects only the Vajra; no server install needed.*
+## Features
 
-## Co mod dělá
+**Left click: beam**
+- The beam starts right at the tip of the Vajra in your hand and ends at the block under your crosshair.
+- Glowing core with flowing pixel-art energy, a blue aura, two spiralling strands, a flare on the tip and a glow with a ring where it hits.
+- The Vajra switches to an animated texture while mining (energy flowing through the loop and the crystal).
+- Removes the vanilla arm "hammering" and the Vajra's dip after every broken block.
+- When you let go, the animation finishes its cycle and the beam fades out smoothly.
 
-**Levé tlačítko: paprsek**
-- Paprsek vychází přímo ze špičky Vajry v ruce a vede do bloku v zaměřovači.
-- Má zářící jádro s proudící pixelovou energií, modrou auru, dvě spirálová vlákna, záblesk na hrotu a záři s kroužkem v místě dopadu.
-- Vajra při těžení použije animovanou texturu (proudící energie ve smyčce a v krystalu).
-- Vypíná běžné „mlácení“ rukou a poskakování Vajry po každém vytěženém bloku.
-- Po puštění tlačítka animace doběhne do konce cyklu a paprsek plynule pohasne.
+**Right click: pulse wave**
+- Fires on the same frame you click, but only when your right click actually reaches a block.
+- See-through pixel rings travel from the tip to the exact spot you clicked and end with a flash and a shockwave ring.
+- Rapid clicks send several waves at once.
 
-**Pravé tlačítko: pulse wave**
-- Vyletí ve stejném snímku, kdy klikneš, ale jen tehdy, když pravým tlačítkem opravdu zasáhneš blok.
-- Průhledné pixelové kroužky letí ze špičky přesně do místa kliku a skončí zábleskem s rázovým kroužkem.
-- Při rychlém klikání poletí víc vln najednou.
+Holding anything other than the Vajra changes nothing.
 
-S jakýmkoli jiným předmětem než Vajrou se nic nemění.
+## Requirements
 
-## Požadavky
+- Minecraft 1.7.10 with Forge, GT: New Horizons (tested on 2.9.0-beta-3 with Java 25)
+- Client only: no need to install it on the server
 
-- Minecraft 1.7.10 s Forge, GT: New Horizons (vyzkoušeno na 2.9.0-beta-3 s Javou 25)
-- Jen klient: na server se mod instalovat nemusí
+## Installation
 
-## Instalace
+1. Download [`VajraFX-1.2.2.jar`](download/VajraFX-1.2.2.jar?raw=true) from the [`download`](download) folder.
+2. Put it into the `mods` folder of your GTNH instance (remove any older VajraFX versions).
+3. Start the game. `config/vajrafx.cfg` is created on the first launch.
 
-1. Stáhni [`VajraFX-1.2.2.jar`](download/VajraFX-1.2.2.jar?raw=true) ze složky [`download`](download).
-2. Vlož ho do složky `mods` ve své GTNH instanci (starší verze VajraFX smaž).
-3. Spusť hru. Při prvním spuštění se vytvoří `config/vajrafx.cfg`.
+After about 2 seconds of mining with the Vajra, the mod prints one diagnostic line `[VajraFX] ...` in chat. Once everything works, turn it off in the config with `debugChat=false`.
 
-Po zhruba 2 sekundách těžení Vajrou napíše mod jednou do chatu diagnostický řádek `[VajraFX] ...`. Když vše funguje, vypni ho v configu přes `debugChat=false`.
+## Configuration (`config/vajrafx.cfg`)
 
-## Nastavení (`config/vajrafx.cfg`)
+Changes take effect after restarting the game.
 
-Změny se projeví po restartu hry.
-
-| Sekce | Položka | Výchozí | Popis |
+| Section | Option | Default | Description |
 |---|---|---|---|
-| `beam` | `beamEnabled` | `true` | Zapne nebo vypne paprsek |
-| `beam` | `beamThickness` | `2.5` | Tloušťka paprsku u hrotu |
-| `beam` | `beamOpacity` | `1.0` | Průhlednost paprsku (nižší = průhlednější) |
-| `beam` | `beamHelix` | `true` | Spirálová vlákna kolem paprsku |
-| `pulse` | `pulseEnabled` | `true` | Zapne nebo vypne pulse wave |
-| `pulse` | `pulseTicks` | `6` | Doba letu vlny k bloku (1 tick = 0,05 s) |
-| `pulse` | `pulseRadius` | `0.3` | Velikost vlny u bloku (v blocích) |
-| `pulse` | `pulseOpacity` | `0.2` | Průhlednost vlny (nižší = průhlednější) |
-| `pulse` | `pulseRecoilDistance`, `pulseRecoilAngle` | `0.08`, `6` | Cuknutí Vajry při výstřelu |
-| `pose` | `aimOffsetX/Y/Z`, `aimRotY/Z` | | Poloha a natočení Vajry při těžení |
-| `pose` | `recoilDistance`, `recoilAngle` | `0.05`, `4` | Cuknutí při vytěžení bloku |
-| `tip` | `tipU`, `tipV` | `0.02`, `0.02` | Kde je špička na textuře Vajry (0 = levý / horní okraj) |
-| `tip` | `tipDepth` | `0.6` | Jak daleko před kamerou paprsek začíná |
-| `tip` | `fallbackTipX`, `fallbackTipY` | `0.66`, `0.52` | Záložní poloha špičky na obrazovce, pokud nefunguje renderer v ruce |
-| `debug` | `debugChat` | `true` | Diagnostický řádek v chatu |
+| `beam` | `beamEnabled` | `true` | Turns the beam on or off |
+| `beam` | `beamThickness` | `2.5` | Beam thickness at the tip |
+| `beam` | `beamOpacity` | `1.0` | Beam opacity (lower = more see-through) |
+| `beam` | `beamHelix` | `true` | Spiralling strands around the beam |
+| `pulse` | `pulseEnabled` | `true` | Turns the pulse wave on or off |
+| `pulse` | `pulseTicks` | `6` | Time for the wave to reach the block (1 tick = 0.05 s) |
+| `pulse` | `pulseRadius` | `0.3` | Size of the wave at the block (in blocks) |
+| `pulse` | `pulseOpacity` | `0.2` | Wave opacity (lower = more see-through) |
+| `pulse` | `pulseRecoilDistance`, `pulseRecoilAngle` | `0.08`, `6` | Vajra kick when firing |
+| `pose` | `aimOffsetX/Y/Z`, `aimRotY/Z` | | Vajra position and rotation while mining |
+| `pose` | `recoilDistance`, `recoilAngle` | `0.05`, `4` | Kick when a block breaks |
+| `tip` | `tipU`, `tipV` | `0.02`, `0.02` | Where the tip is on the Vajra texture (0 = left / top edge) |
+| `tip` | `tipDepth` | `0.6` | How far in front of the camera the beam starts |
+| `tip` | `fallbackTipX`, `fallbackTipY` | `0.66`, `0.52` | Fallback tip position on screen if the hand renderer does not run |
+| `debug` | `debugChat` | `true` | Diagnostic line in chat |
 
-## Vlastní textury
-
-Textury jde nahradit vlastním resource packem se stejnými cestami:
-
-- `assets/vajrafx/textures/items/vajra_active_0.png` až `vajra_active_7.png`: Vajra při těžení (8 snímků, 1 snímek za tick)
-- `assets/vajrafx/textures/items/vajra_charge_2.png`: záblesk krystalu při výstřelu pulse wave
-- `assets/vajrafx/textures/fx/beam_core.png`, `beam_glow.png`, `flare.png`, `ring.png`: efekty paprsku a vlny
-
-## Jak to funguje
-
-- Vajru mod pozná podle třídy `ToolVajra`, takže GregTech nepotřebuje jako závislost při sestavení.
-- Vlastní `IItemRenderer` vykreslí Vajru v ruce a zjistí, kde na obrazovce je její špička.
-- Efekty se kreslí v průchodu světa (`RenderWorldLastEvent`). Poloha špičky se převede na bod těsně před kamerou, takže paprsek i vlna vyjdou přesně z hrotu. Tenhle způsob funguje i s Angelicou, která v GTNH mění vykreslování.
-
-## Sestavení ze zdrojáků
-
-Projekt je postavený na šabloně GTNH ExampleMod (RetroFuturaGradle).
-
-- Gradle potřebuje Javu 25, sestavení navíc používá toolchainy Java 17 a Java 8 (Gradle je umí stáhnout sám).
-- `./gradlew build`, hotový `.jar` je v `build/libs/`.
-
-## Licence
+## License
 
 [MIT](LICENSE) © 2026 Sixxo
