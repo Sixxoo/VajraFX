@@ -4,19 +4,12 @@ A client-side mod for **GregTech: New Horizons** (Minecraft 1.7.10) that adds mi
 
 ## Features
 
-**Left click: beam**
-- The beam starts right at the tip of the Vajra in your hand and ends at the block under your crosshair.
-- Glowing core with flowing pixel-art energy, a blue aura, two spiralling strands, a flare on the tip and a glow with a ring where it hits.
-- The Vajra switches to an animated texture while mining (energy flowing through the loop and the crystal).
-- Removes the vanilla arm "hammering" and the Vajra's dip after every broken block.
-- When you let go, the animation finishes its cycle and the beam fades out smoothly.
+- **Left click:** an energy beam from the Vajra's tip to the block you are mining
+- **Right click on a block:** an instant see-through pulse wave to the spot you clicked
+- **Animated Vajra** texture while mining
+- **Smooth mining:** no arm hammering, the beam fades out when you let go
 
-**Right click: pulse wave**
-- Fires on the same frame you click, but only when your right click actually reaches a block.
-- See-through pixel rings travel from the tip to the exact spot you clicked and end with a flash and a shockwave ring.
-- Rapid clicks send several waves at once.
-
-Holding anything other than the Vajra changes nothing.
+Only the Vajra is affected.
 
 ## Requirements
 
