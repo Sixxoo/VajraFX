@@ -27,7 +27,7 @@ S jakýmkoli jiným předmětem než Vajrou se nic nemění.
 
 ## Instalace
 
-1. Stáhni `VajraFX-<verze>.jar` z [Releases](../../releases).
+1. Stáhni [`VajraFX-1.2.2.jar`](download/VajraFX-1.2.2.jar?raw=true) ze složky [`download`](download).
 2. Vlož ho do složky `mods` ve své GTNH instanci (starší verze VajraFX smaž).
 3. Spusť hru. Při prvním spuštění se vytvoří `config/vajrafx.cfg`.
 
